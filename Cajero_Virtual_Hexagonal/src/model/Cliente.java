@@ -6,7 +6,7 @@ public class Cliente {
 	private String nombre;
 	private String direccion;
 	private int telefono;
-	
+	// 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
 	public Cliente() {}
 	
 	public Cliente(int dni, String nombre, String direccion, int telefono) {

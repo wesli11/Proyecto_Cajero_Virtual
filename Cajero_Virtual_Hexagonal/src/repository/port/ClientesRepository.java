@@ -2,7 +2,7 @@ package repository.port;
 
 import model.Cliente;
 
-public interface ClienteRepository {
+public interface ClientesRepository {
 	
 	public void saveClient(Cliente cliente);
 	public Cliente findByDni(int dni);

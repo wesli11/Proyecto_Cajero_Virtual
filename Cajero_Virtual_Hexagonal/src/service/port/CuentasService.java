@@ -12,5 +12,10 @@ public interface CuentasService {
 	public List<Cuenta> listaCuentas();
 	public void actualizarCuenta(Cuenta cuenta);
 	public void borrarPorNumeroCuenta(int numeroCuenta);
+	//metodos esenciales del service
+	public void ingresar(int numCuenta, double cantidad);
+	public void extraer(int numCuenta,  double cantidad);
+	public void transferir(int cuentaOrigen, int cuentaDestino, double cantidad);
+	public double saldo(int numCuenta);
 	
 }

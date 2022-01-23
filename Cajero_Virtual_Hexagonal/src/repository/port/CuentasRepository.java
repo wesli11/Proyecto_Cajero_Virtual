@@ -11,5 +11,6 @@ public interface CuentasRepository {
 	public List<Cuenta> allAccounts();
 	public void updateAccount(Cuenta cuenta);
 	public void deleteByNumeroCuenta(int numeroCuenta);
+	public List<Cuenta> accountDisponibility(int dni);
 	
 }

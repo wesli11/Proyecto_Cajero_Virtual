@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import model.Cuenta;
 import model.Movimiento;
+import repository.port.ClientesRepository;
 import repository.port.CuentasRepository;
 import repository.port.MovimientosRepository;
 import service.port.CuentasService;
@@ -16,6 +17,8 @@ public class CuentasServiceImpl implements CuentasService {
 
 	@Autowired
 	CuentasRepository repository;
+	@Autowired
+	ClientesRepository crepository;
 	@Autowired
 	MovimientosRepository mrepository;
 	
@@ -91,5 +94,13 @@ public class CuentasServiceImpl implements CuentasService {
 		   return cuenta.getSaldo();
 	   }
 		return 0;
+	}
+
+	@Override
+	public List<Cuenta> cuentasDisponibles(int dni) {
+       if(crepository.findByDni(dni)!=null) {
+    	   return repository.accountDisponibility(dni);
+       }
+		return null;
 	}
 }

@@ -10,5 +10,5 @@ public interface MovimientosService {
 
 	public void altaMovimiento(Movimiento movimiento);
     public List<Movimiento> listaCuentas(int numeroCuenta);
-    public List<Movimiento> consultaMovimientoPorFecha(Date f1,Date f2);
+    public List<Movimiento> consultaMovimientoPorFecha(String f1,String f2);
 }

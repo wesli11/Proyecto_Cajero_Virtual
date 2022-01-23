@@ -1,18 +1,23 @@
 package service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import model.Cuenta;
+import model.Movimiento;
 import repository.port.CuentasRepository;
+import repository.port.MovimientosRepository;
 import service.port.CuentasService;
 @Service
 public class CuentasServiceImpl implements CuentasService {
 
 	@Autowired
 	CuentasRepository repository;
+	@Autowired
+	MovimientosRepository mrepository;
 	
 	@Override
 	public void altaCuenta(Cuenta cuenta) {
@@ -47,23 +52,30 @@ public class CuentasServiceImpl implements CuentasService {
 		   repository.deleteByNumeroCuenta(numeroCuenta);
 	}
 	}
-
+   // public Movimiento(int idMovimniento, Date fecha, double cantidad, String operacion) {
 	@Override
 	public void ingresar(int numCuenta, double cantidad) {
        Cuenta cuenta=repository.findByNumeroCuenta(numCuenta);
        if(cuenta!=null) {
     	   cuenta.setSaldo(cuenta.getSaldo()+cantidad);
-    	   repository.updateAccount(cuenta); 
+    	   Movimiento m= new Movimiento();
+    	   m.setFecha(new Date());
+    	   m.setCantidad(cantidad);
+    	   m.setOperacion("Ingreso");
+    	   mrepository.saveMovimiento(m);
        }
 	}
-
+       // 
 	@Override
 	public void extraer(int numCuenta, double cantidad) {
 		 Cuenta cuenta=repository.findByNumeroCuenta(numCuenta);
 	       if(cuenta!=null && cuenta.getSaldo()>=cantidad) {
 	    	   cuenta.setSaldo(cuenta.getSaldo()-cantidad);
-	    	   repository.updateAccount(cuenta); 
-	       }
+	    	   Movimiento m= new Movimiento();
+	    	   m.setFecha(new Date());
+	    	   m.setCantidad(cantidad);
+	    	   m.setOperacion("Extraccion");
+	    	   mrepository.saveMovimiento(m);	       }
 	}
 
 	@Override

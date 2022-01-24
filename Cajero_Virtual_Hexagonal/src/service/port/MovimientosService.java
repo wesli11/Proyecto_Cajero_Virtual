@@ -1,6 +1,5 @@
 package service.port;
 
-import java.util.Date;
 import java.util.List;
 
 import model.Movimiento;

@@ -28,7 +28,7 @@ public class Inicializador implements WebApplicationInitializer {
 	      AnnotationConfigWebApplicationContext dispatcherContext =
 	        new AnnotationConfigWebApplicationContext();
 	     // dispatcherContext.register(MvcConfig.class);
-
+/*
 	      // Crea y Registra el DispatcherServlet
 	      ServletRegistration.Dynamic dispatcher =
 	      servletContext.addServlet("dispatcher", new DispatcherServlet(dispatcherContext));
@@ -38,6 +38,7 @@ public class Inicializador implements WebApplicationInitializer {
 	      //registro del filtro de seguridad
 	      servletContext.addFilter("springSecurityFilterChain", new DelegatingFilterProxy("springSecurityFilterChain"))
 	      .addMappingForUrlPatterns(null, false, "/*");
+	*/
 	}
 
 }

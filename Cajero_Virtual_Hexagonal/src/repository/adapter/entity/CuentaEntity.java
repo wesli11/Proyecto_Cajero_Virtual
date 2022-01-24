@@ -28,7 +28,7 @@ public class CuentaEntity implements Serializable {
 
 	//bi-directional many-to-one association to Movimiento
 	@OneToMany(mappedBy="cuenta")
-	private List<Movimiento> movimientos;
+	private List<MovimientoEntity> movimientos;
 
 	public CuentaEntity() {
 	}
@@ -65,22 +65,22 @@ public class CuentaEntity implements Serializable {
 		this.clientes = clientes;
 	}
 
-	public List<Movimiento> getMovimientos() {
+	public List<MovimientoEntity> getMovimientos() {
 		return this.movimientos;
 	}
 
-	public void setMovimientos(List<Movimiento> movimientos) {
+	public void setMovimientos(List<MovimientoEntity> movimientos) {
 		this.movimientos = movimientos;
 	}
 
-	public Movimiento addMovimiento(Movimiento movimiento) {
+	public MovimientoEntity addMovimiento(MovimientoEntity movimiento) {
 		getMovimientos().add(movimiento);
 		movimiento.setCuenta(this);
 
 		return movimiento;
 	}
 
-	public Movimiento removeMovimiento(Movimiento movimiento) {
+	public MovimientoEntity removeMovimiento(MovimientoEntity movimiento) {
 		getMovimientos().remove(movimiento);
 		movimiento.setCuenta(null);
 

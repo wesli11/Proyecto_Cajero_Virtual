@@ -11,8 +11,8 @@ import java.util.Date;
  */
 @Entity
 @Table(name="movimientos")
-@NamedQuery(name="Movimiento.findAll", query="SELECT m FROM Movimiento m")
-public class Movimiento implements Serializable {
+@NamedQuery(name="MovimientoEntity.findAll", query="SELECT m FROM MovimientoEntity m")
+public class MovimientoEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -31,7 +31,7 @@ public class Movimiento implements Serializable {
 	@JoinColumn(name="idCuenta",referencedColumnName="numeroCuenta")
 	private CuentaEntity cuenta;
 
-	public Movimiento() {
+	public MovimientoEntity() {
 	}
 
 	public int getIdMovimiento() {

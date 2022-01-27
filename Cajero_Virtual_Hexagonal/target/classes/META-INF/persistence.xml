@@ -3,6 +3,6 @@
 	<persistence-unit name="Cajero_Virtual_Hexagonal">
 		<class>repository.adapter.entity.ClienteEntity</class>
 		<class>repository.adapter.entity.CuentaEntity</class>
-		<class>repository.adapter.entity.Movimiento</class>
+		<class>repository.adapter.entity.MovimientoEntity</class>
 	</persistence-unit>
 </persistence>

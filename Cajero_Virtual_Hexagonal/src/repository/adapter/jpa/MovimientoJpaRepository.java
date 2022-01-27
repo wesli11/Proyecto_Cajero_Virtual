@@ -16,4 +16,5 @@ public interface MovimientoJpaRepository extends JpaRepository<MovimientoEntity,
 	@Query("Select m from MovimientoEntity m where m.fecha> between ?1 and ?2")
 	public List<MovimientoEntity> findByListMovements(Date f1, Date f2);
 
+	public void metodotest();
 }

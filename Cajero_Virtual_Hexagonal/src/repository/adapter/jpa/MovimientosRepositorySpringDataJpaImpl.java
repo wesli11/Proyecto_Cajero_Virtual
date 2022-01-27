@@ -38,6 +38,7 @@ public class MovimientosRepositorySpringDataJpaImpl implements MovimientosReposi
 	    		 .stream()
 	    		    .map(m->Utilidades.convertToMovimiento(m))
 	    		      .collect(Collectors.toList());
+	    
 	}
 
 }
